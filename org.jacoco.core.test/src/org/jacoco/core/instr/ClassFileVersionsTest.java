@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009, 2020 Mountainminds GmbH & Co. KG and Contributors
+ * Copyright (c) 2009, 2021 Mountainminds GmbH & Co. KG and Contributors
  * This program and the accompanying materials are made available under
  * the terms of the Eclipse Public License 2.0 which is available at
  * http://www.eclipse.org/legal/epl-2.0
@@ -29,6 +29,8 @@ import static org.objectweb.asm.Opcodes.V11;
 import static org.objectweb.asm.Opcodes.V12;
 import static org.objectweb.asm.Opcodes.V13;
 import static org.objectweb.asm.Opcodes.V14;
+import static org.objectweb.asm.Opcodes.V15;
+import static org.objectweb.asm.Opcodes.V16;
 import static org.objectweb.asm.Opcodes.V1_1;
 import static org.objectweb.asm.Opcodes.V1_2;
 import static org.objectweb.asm.Opcodes.V1_3;
@@ -129,7 +131,12 @@ public class ClassFileVersionsTest {
 
 	@Test
 	public void test_15() throws IOException {
-		testVersion(V14 + 1, true);
+		testVersion(V15, true);
+	}
+
+	@Test
+	public void test_16() throws IOException {
+		testVersion(V16, true);
 	}
 
 	private void testVersion(int version, boolean frames) throws IOException {
